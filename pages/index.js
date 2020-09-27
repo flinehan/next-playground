@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import {DataDrivenOperatingHours} from '../app/components/operating-hours'
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1>test</h1>
+        <DataDrivenOperatingHours/>
       </main>
     </div>
   )
