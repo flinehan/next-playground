@@ -1,0 +1,62 @@
+{
+  "locations": [
+    {
+      "id": 1,
+      "hours": [
+        {
+          "start": "monday",
+          "end": "thursday",
+          "open": "7:00:00 EST",
+          "close": "20:00:00 EST",
+          "24Hours": false,
+          "specialHour": false
+        },
+        {
+          "start": "friday",
+          "end": "saturday",
+          "open": null,
+          "close": null,
+          "24Hours": true,
+          "specialHour": false
+        },
+        {
+          "start": "sunday",
+          "end": null,
+          "open": "6:00:00 EST",
+          "close": "17:00:00 EST",
+          "24Hours": false,
+          "specialHour": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "hours": [
+        {
+          "start": "monday",
+          "end": "thursday",
+          "open": "7:00:00 EST",
+          "close": "20:00:00 EST",
+          "24Hours": false,
+          "specialHour": false
+        },
+        {
+          "start": "friday",
+          "end": "saturday",
+          "open": null,
+          "close": null,
+          "24Hours": true,
+          "specialHour": false
+        },
+        {
+          "start": "sunday",
+          "end": null,
+          "open": "6:00:00 EST",
+          "close": "17:00:00 EST",
+          "24Hours": false,
+          "specialHour": false
+        }
+      ]
+    }
+  ]
+}
