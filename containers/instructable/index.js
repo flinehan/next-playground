@@ -1,14 +1,33 @@
 import Head from 'next/head'
+import Header from '../../components/header'
+import Body from '../../components/body'
+import Steps from '../../components/steps'
+import StepContainer from '../step'
 
-export default function Instructable({instructableModel}) {
-  const {title, steps} = instructableModel
+export default function InstructableContainer({ instructableModel = {} }) {
+  const { title, steps, author } = instructableModel
+
   return (
     <div>
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content={`${title} - ${steps[0].body}`}/>
+        <meta name="description" content={`${title} - ${steps[0].body}`} />
       </Head>
+
+      <Header author={author}
+        title={title}
+      />
+
+      <Body>
+        <Steps steps={steps}>
+          {(step, index) => {
+            return <StepContainer step={step} key={step.id} />
+          }}
+        </Steps>
+      </Body>
+
+
     </div>
   )
 }

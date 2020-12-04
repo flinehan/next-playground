@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import fetchInstructable from '../services/fetchInstructable'
+import InstructableContainer from '../containers/instructable'
 import Error from 'next/error';
 
 // This function gets called at build time
@@ -24,10 +25,6 @@ export default function InstructablePath({instructableModel}) {
   }
 
   return (
-    <div>
-      {query.path}
-      document:
-      {instructableModel.id}
-    </div>
+    <InstructableContainer instructableModel={instructableModel}/>
   )
 }
