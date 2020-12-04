@@ -1,5 +1,6 @@
-import { useRouter } from 'next/router'
 import fetchInstructable from '../services/fetchInstructable'
+import fetchComments from '../services/fetchComments'
+
 import InstructableContainer from '../containers/instructable'
 import Error from 'next/error';
 
@@ -14,11 +15,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
   const instructableModel = await fetchInstructable(params.path);
+  const comments = await fetchComments(instructableModel.id)
 
-  return { props: { instructableModel } };
+  return { props: { instructableModel, comments: comments.comments } };
 }
 
-export default function InstructablePath({instructableModel}) {
+export default function InstructablePath({instructableModel, comments}) {
 
   if(!instructableModel){
     return(
@@ -27,6 +29,6 @@ export default function InstructablePath({instructableModel}) {
   }
 
   return (
-    <InstructableContainer instructableModel={instructableModel}/>
+    <InstructableContainer instructableModel={instructableModel} comments={comments}/>
   )
 }

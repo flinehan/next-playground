@@ -3,8 +3,9 @@ import Header from '../../components/header'
 import Body from '../../components/body'
 import Steps from '../../components/steps'
 import StepContainer from '../step'
+import CommentsContainer from '../comments'
 
-export default function InstructableContainer({ instructableModel = {} }) {
+export default function InstructableContainer({ instructableModel, comments = [] }) {
   const { title, steps, author } = instructableModel
 
   return (
@@ -25,6 +26,7 @@ export default function InstructableContainer({ instructableModel = {} }) {
             return <StepContainer step={step} key={step.id} />
           }}
         </Steps>
+        <CommentsContainer comments={comments} />
       </Body>
 
 
