@@ -11,4 +11,5 @@ export default async function fetchInstructable(path){
       return null
     }
 
+    return {}
 }
