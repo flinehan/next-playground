@@ -6,5 +6,8 @@ You will need [node.js](https://nodejs.org/en/)
 First install dependencies then run the development server:
 
 ```bash
+npm install
 npm run dev
 ```
+
+visit: `http://localhost:3000/` to use the dev server.

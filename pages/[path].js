@@ -14,8 +14,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
+
+  let comments = {comments: []}
+
   const instructableModel = await fetchInstructable(params.path);
-  const comments = await fetchComments(instructableModel.id)
+
+  if(instructableModel){
+    comments = await fetchComments(instructableModel.id)
+  }
+
 
   return { props: { instructableModel, comments: comments.comments } };
 }
